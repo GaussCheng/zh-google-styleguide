@@ -65,7 +65,7 @@
     my-useful-class.cc
     myusefulclass.cc
 
-C++ 文件要以 ``.cc`` 结尾, 头文件以 ``.h`` 结尾.
+C++ 文件要以 ``.cpp`` 结尾, 头文件以 ``.h`` 结尾.
 
 不要使用已经存在于 ``/usr/include`` 下的文件名 (yospaly 注: 即编译器搜索系统头文件的路径), 如 ``db.h``.
 
