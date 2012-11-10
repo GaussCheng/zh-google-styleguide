@@ -13,16 +13,15 @@
 ~~~~~~~~~~~~~~~~~
 
 .. tip::
-   所有头文件都应该使用 ``#define`` 防止头文件被多重包含, 命名格式当是: ``<PROJECT>_<PATH>_<FILE>_H_``
+   所有头文件都应该使用 ``#define`` 防止头文件被多重包含, 命名格式当是: ``_<FILE>_H_``
 
-为保证唯一性, 头文件的命名应该依据所在项目源代码树的全路径. 例如, 项目 ``foo`` 中的头文件 ``foo/src/bar/baz.h`` 可按如下方式保护:
 
 .. code-block:: c++
 
-    #ifndef FOO_BAR_BAZ_H_
-    #define FOO_BAR_BAZ_H_
+    #ifndef _BAZ_H_
+    #define _BAZ_H_
     …
-    #endif // FOO_BAR_BAZ_H_
+    #endif // _BAZ_H_
 
 
 1.2. 头文件依赖
