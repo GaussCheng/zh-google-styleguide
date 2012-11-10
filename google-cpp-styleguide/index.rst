@@ -41,6 +41,7 @@ Google 经常会发布一些开源项目, 意味着会接受来自其他代码�
 中文版和英文版一样, 使用 ``Artistic License/GPL`` 开源许可.
 
 中文版修订历史:
+
     - 2009-06 3.133 : YuleFox 的 1.0 版已经相当完善, 但原版在近一年的时间里, 其规范也发生了一些变化.
 
         brantyoung 与 YuleFox 一拍即合, 以项目的形式来延续中文版 : `Google 开源项目风格指南 - 中文版项目 <http://github.com/brantyoung/zh-google-styleguide>`_.

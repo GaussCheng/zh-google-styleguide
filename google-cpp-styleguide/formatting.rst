@@ -42,7 +42,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
-    只使用空格, 每次缩进 2 个空格.
+    只使用空格, 每次缩进 4 个空格.
     
 我们使用空格缩进. 不要在代码中使用制符表. 你应该设置编辑器将制符表转为空格.
 
@@ -91,9 +91,7 @@
 
     - 圆括号与参数间没有空格;
 
-    - 左大括号总在最后一个参数同一行的末尾处;
-
-    - 右大括号总是单独位于函数最后一行;
+    - 左右大括号总是单独位于函数最后一行;
 
     - 右圆括号和左大括号间总是有一个空格;
 
@@ -101,7 +99,7 @@
 
     - 所有形参应尽可能对齐;
 
-    - 缺省缩进为 2 个空格;
+    - 缺省缩进为 4 个空格;
 
     - 换行后的参数保持 4 个空格的缩进;
 
@@ -109,14 +107,16 @@
     .. code-block:: c++
     
         // Everything in this function signature fits on a single line
-        ReturnType FunctionName(Type par) const {
+        ReturnType FunctionName(Type par) const 
+	{
           ...
         }
         
         // This function signature requires multiple lines, but
         // the const keyword is on the line with the last parameter.
         ReturnType ReallyLongFunctionName(Type par1,
-                                          Type par2) const {
+                                          Type par2) const 
+	{
           ...
         }
         
@@ -124,13 +124,15 @@
     .. code-block:: c++
         
         // Always have named parameters in interfaces.
-        class Shape {
+        class Shape 
+	{
          public:
           virtual void Rotate(double radians) = 0;
         }
         
         // Always have named parameters in the declaration.
-        class Circle : public Shape {
+        class Circle : public Shape 
+	{
          public:
           virtual void Rotate(double radians);
         }
@@ -196,9 +198,12 @@
 最常见的是没有空格的格式. 哪种都可以, 但 *保持一致性*. 如果你是在修改一个文件, 参考当前已有格式. 如果是写新的代码, 参考目录下或项目中其它文件. 还在徘徊的话, 就不要加空格了.
     .. code-block:: c++
         
-        if (condition) {  // no spaces inside parentheses
+        if (condition) 
+	{  // no spaces inside parentheses
           ...  // 2 space indent.
-        } else {  // The else goes on the same line as the closing brace.
+        } 
+	else 
+	{  // The else goes on the same line as the closing brace.
           ...
         }
         
@@ -207,7 +212,9 @@
         
         if ( condition ) {  // spaces inside parentheses - rare
           ...  // 2 space indent.
-        } else {  // The else goes on the same line as the closing brace.
+        } 
+	else 
+	{  // The else goes on the same line as the closing brace.
           ...
         }
         
@@ -221,7 +228,7 @@
     
     .. code-block:: c++
         
-        if (condition) {  // Good - proper space after IF and before {.
+        if (condition) {  // Good - proper space after IF and before }.
         
 如果能增强可读性, 简短的条件语句允许写在同一行. 只有当语句简单并且没有使用 ``else`` 子句时使用:
     .. code-block:: c++
@@ -253,15 +260,18 @@
         .. code-block:: c++
         
             // Not allowed - curly on IF but not ELSE
-            if (condition) {
+            if (condition) 
+	    {
                 foo;
-            } else
+            } 
+	    else
                 bar;
             
             // Not allowed - curly on ELSE but not IF
             if (condition)
                 foo;
-            else {
+            else 
+	    {
                 bar;
             }
     
@@ -270,9 +280,12 @@
         
         // Curly braces around both IF and ELSE required because
         // one of the clauses used braces.
-        if (condition) {
+        if (condition) 
+	{
           foo;
-        } else {
+        } 
+	else 
+	{
           bar;
         }
 
@@ -288,24 +301,29 @@
 如果有不满足 ``case`` 条件的枚举值, ``switch`` 应该总是包含一个 ``default`` 匹配 (如果有输入值没有 case 去处理, 编译器将报警). 如果 ``default`` 应该永远执行不到, 简单的加条 ``assert``:
     .. code-block:: c++
         
-        switch (var) {
-          case 0: {  // 2 space indent
+        switch (var) 
+	{
+        case 0: 
+	{  // 2 space indent
             ...      // 4 space indent
             break;
-          }
-          case 1: {
+        }
+        case 1: 
+	{
             ...
             break;
-          }
-          default: {
+        }
+        default: 
+	{
             assert(false);
-          }
+        }
         }
         
 空循环体应使用 ``{}`` 或 ``continue``, 而不是一个简单的分号.
     .. code-block:: c++
         
-        while (condition) {
+        while (condition) 
+	{
           // Repeat test until it returns false.
         }
         for (int i = 0; i < kSomeNumber; ++i) {}  // Good - empty body.
@@ -364,7 +382,8 @@
         
         if (this_one_thing > this_other_thing &&
             a_third_thing == a_fourth_thing &&
-            yet_another & last_one) {
+            yet_another & last_one) 
+	{
           ...
         }
         
@@ -613,7 +632,8 @@
     
     .. code-block:: c++
         
-        void Function() {
+        void Function() 
+	{
         
           // Unnecessary blank lines before and after
         
@@ -623,11 +643,13 @@
     
     .. code-block:: c++
     
-        while (condition) {
+        while (condition) 
+	{
           // Unnecessary blank line after
         
         }
-        if (condition) {
+        if (condition) 
+	{
         
           // Unnecessary blank line before
         }
@@ -635,11 +657,13 @@
 ``if-else`` 块之间空一行是可以接受的:
     .. code-block:: c++
         
-        if (condition) {
+        if (condition) 
+	{
           // Some lines of code too small to move to another function,
           // followed by a blank line.
 
-        } else {
+        }
+	 else {
           // Another block of code
         }
 
