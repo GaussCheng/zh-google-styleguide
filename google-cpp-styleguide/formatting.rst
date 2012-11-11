@@ -55,7 +55,8 @@
 函数看上去像这样:
     .. code-block:: c++
         
-        ReturnType ClassName::FunctionName(Type par_name1, Type par_name2) {
+        ReturnType ClassName::FunctionName(Type par_name1, Type par_name2) 
+	{
             DoSomething();
             ...
         }
@@ -65,7 +66,8 @@
         
         ReturnType ClassName::ReallyLongFunctionName(Type par_name1,
                                                      Type par_name2,
-                                                     Type par_name3) {
+                                                     Type par_name3,
+	{
             DoSomething();
             ...
         }
@@ -74,10 +76,10 @@
     .. code-block:: c++
         
         ReturnType LongClassName::ReallyReallyReallyLongFunctionName(
-                Type par_name1,  // 4 space indent
+                Type par_name1,  // 8 space indent
                 Type par_name2,
                 Type par_name3) {
-            DoSomething();  // 2 space indent
+            DoSomething();  // 4 space indent
             ...
         }
     
@@ -101,7 +103,7 @@
 
     - 缺省缩进为 4 个空格;
 
-    - 换行后的参数保持 4 个空格的缩进;
+    - 换行后的参数保持 8 个空格的缩进;
 
 如果函数声明成 ``const``, 关键字 ``const`` 应与最后一个参数位于同一行:=
     .. code-block:: c++
@@ -181,7 +183,7 @@
           ...
           if (...) {
             DoSomethingThatRequiresALongFunctionName(
-                very_long_argument1,  // 4 space indent
+                very_long_argument1,  // 8 space indent
                 argument2,
                 argument3,
                 argument4);
@@ -248,10 +250,11 @@
     .. code-block:: c++
         
         if (condition)
-          DoSomething();  // 2 space indent.
+            DoSomething();  // 4 space indent.
         
-        if (condition) {
-          DoSomething();  // 2 space indent.
+        if (condition) 
+	{
+            DoSomething();  // 4 space indent.
         }
         
 但如果语句中某个 ``if-else`` 分支使用了大括号的话, 其它分支也必须使用:
@@ -282,11 +285,11 @@
         // one of the clauses used braces.
         if (condition) 
 	{
-          foo;
+            foo;
         } 
 	else 
 	{
-          bar;
+            bar;
         }
 
 
@@ -304,7 +307,7 @@
         switch (var) 
 	{
         case 0: 
-	{  // 2 space indent
+	{  
             ...      // 4 space indent
             break;
         }
@@ -681,4 +684,4 @@
 8. 初始化用 ``=`` 还是 ``()`` 依个人喜好, 统一就好;
 9. ``return`` 不要加 ``()``;
 10. 水平/垂直留白不要滥用, 怎么易读怎么来.
-11. 关于 UNIX/Linux 风格为什么要把左大括号置于行尾 (``.cc`` 文件的函数实现处, 左大括号位于行首), 我的理解是代码看上去比较简约, 想想行首除了函数体被一对大括号封在一起之外, 只有右大括号的代码看上去确实也舒服; Windows 风格将左大括号置于行首的优点是匹配情况一目了然.
+11. 关于 UNIX/Linux 风格为什么要把左大括号置于行尾 (``.cpp`` 文件的函数实现处, 左大括号位于行首), 我的理解是代码看上去比较简约, 想想行首除了函数体被一对大括号封在一起之外, 只有右大括号的代码看上去确实也舒服; Windows 风格将左大括号置于行首的优点是匹配情况一目了然.
